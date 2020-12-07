@@ -1,0 +1,2 @@
+class Planets
+end
