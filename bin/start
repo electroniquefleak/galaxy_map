@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/galaxy_map.rb"
+
+CLI.new.run
