@@ -3,7 +3,7 @@ class Planet
     attr_accessor :name, :rotation_period, :orbital_period, :diameter, :climate, :gravity, :terrain, :surface_water, :population, :residents, :films, :created, :edited, :url
 
     def save
-        self.class.all << self
+        self.class.all << self if @@all.none? {|planet|planet.name==@name}
     end
 
     def self.all
@@ -21,7 +21,10 @@ class Planet
         save
     end
 
-    def to_string
-        "Name: #{@name}" + "\n" + "Rotation Period: #{@rotation_period}"
+    def to_s
+        "#{@name}"
+    end
+
+    def info
     end
 end

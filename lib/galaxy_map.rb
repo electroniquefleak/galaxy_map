@@ -17,8 +17,20 @@ module GalaxyMap
 end
 
 api=API.new
-planets=api.get_planets(1)
+(1..6).each do |i|
+planets=api.get_planets(i)
 planets.each do |planet|
 Planet.new(api.get_planet(planet))
 end
-puts Planet.all
+end
+puts "Welcome to the galaxy map. There is more knowledge here than anywhere else in the galaxy!"
+Planet.all.each_with_index do |planet, i|
+  puts "#{i}, #{planet}"
+end
+print "Total Planets:" + " "
+puts Planet.all.count
+while true
+puts "Please select a planet to view its diagnostics."
+choice = gets.chomp.to_i
+puts Planet.all[choice]
+end
