@@ -1,4 +1,4 @@
-class Person
+class Resident
     @@all = []
 
     def save

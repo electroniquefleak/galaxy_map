@@ -9,6 +9,7 @@ require_relative "./galaxy_map/api"
 require_relative "./galaxy_map/cli"
 require_relative "./galaxy_map/film"
 require_relative "./galaxy_map/planet"
+require_relative "./galaxy_map/resident"
 
 module GalaxyMap
   class Error < StandardError; end
@@ -16,4 +17,4 @@ module GalaxyMap
 end
 
 api=API.new
-api.get_planets
+api.get_planets(1)
