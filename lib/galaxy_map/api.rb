@@ -4,9 +4,16 @@ class API
     def initialize
     end
 
-    def get_planets
-        uri=URI("https://swapi.dev/api/films/1")
-        HTTP.get(http https://swapi.dev/api/films/1/)
+    def get_planets(id)
+        uri=("https://swapi.dev/api/films/#{id}")
+        body=HTTParty.get(uri)
+        body["planets"]
+    end
+
+    def get_planet(id)
+        uri=("https://swapi.dev/api/planets/#{id}")
+        body=HTTParty.get(uri)
+        body
     end
 
 end
