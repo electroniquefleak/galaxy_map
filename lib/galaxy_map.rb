@@ -17,4 +17,8 @@ module GalaxyMap
 end
 
 api=API.new
-api.get_planets(1)
+planets=api.get_planets(1)
+planets.each do |planet|
+Planet.new(api.get_planet(planet))
+end
+puts Planet.all

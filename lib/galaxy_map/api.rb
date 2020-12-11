@@ -11,7 +11,7 @@ class API
     end
 
     def get_planet(id)
-        uri=("https://swapi.dev/api/planets/#{id}")
+        uri=("#{id}")
         body=HTTParty.get(uri)
         body
     end
