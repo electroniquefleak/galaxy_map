@@ -6,6 +6,8 @@ require_relative "./galaxy_map/planets"
 
 require "httparty"
 require "net/http"
+require "pry"
+require "swapi"
 
 module GalaxyMap
   class Error < StandardError; end
