@@ -13,8 +13,6 @@ class Resident
     def initialize(attributes=nil)
         if attributes
             attributes.each do |k,v|
-            #puts k
-            #puts v
               self.send("#{k}=", v)
             end
         end
@@ -25,7 +23,7 @@ class Resident
         "#{@name}"
     end
 
-    def info
-        "#{name}" + "\n" + "#{height}" + "\n" + "#{mass}" + "\n" + "#{hair_color}" + "\n" + "#{eye_color}" + "\n" + "#{birth_year}" + "\n" + "#{gender}" + "\n" + "#{homeworld}" + "\n" + "#{films}" + "\n" + "#{species}"+ "\n" + "#{vehicles}" + "\n" + "#{starships}"
+    def info 
+       "Name: #{name}" + "\n" + "Height: #{height}" + "\n" + "Mass: #{mass}" + "\n" + "Hair Color: #{hair_color}" + "\n" + "Skin Color: #{skin_color}" + "\n" + "Eye Color: #{eye_color}" + "\n" + "Birth Year: #{birth_year}" + "\n" + "Gender: #{gender}" + "\n"
     end
 end

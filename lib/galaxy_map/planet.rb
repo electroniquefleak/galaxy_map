@@ -13,8 +13,6 @@ class Planet
     def initialize(attributes=nil)
         if attributes
             attributes.each do |k,v|
-            #puts k
-            #puts v
               self.send("#{k}=", v)
             end
         end
@@ -26,6 +24,20 @@ class Planet
     end
 
     def info
-        "#{rotation_period}" + "\n" + "#{orbital_period}" + "\n" + "#{diameter}" + "\n" + "#{climate}" + "\n" + "#{gravity}" + "\n" + "#{terrain}" + "\n" + "#{surface_water}" + "\n" + "#{population}" + "\n" + "#{residents}" + "\n" + "#{films}"
+        residents.each do |resident|
+        Resident.new(API.get_resident(resident))
+        end
+        str = "Rotation Period: #{rotation_period}" + "\n" + "Orbital Period: #{orbital_period}" + "\n" + "Diameter: #{diameter}" + "\n" + "Climate: #{climate}" + "\n" + "Gravity: #{gravity}" + "\n" + "Terrain: #{terrain}" + "\n" + "Surface Water: #{surface_water}" + "\n" + "Population: #{population}" + "\n" + "Films: #{films}"
+        puts str
+        str = ""
+        str += "Residents:"
+        puts "Would you like to see the inhabitants of this planet?"
+        answer = gets.chomp
+        if answer == "Yes" 
+        Resident.all.each do |resident|
+            str += resident.info + "\n"
+        end
+        end
+        str
     end
 end

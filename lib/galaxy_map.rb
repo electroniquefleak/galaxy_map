@@ -33,7 +33,7 @@ while true
 puts "Galaxy Map Interface: Intialized. . . Welcome, please select a planet to view its astrographical information."
 choice = gets.chomp.to_i
 puts Planet.all[choice].info
-puts "Would you like to select another planet?"
+puts "Would you like to select another planet? (Y/N)"
 answer = gets.chomp
 if answer == "no"
   break
