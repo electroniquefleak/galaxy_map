@@ -37,5 +37,9 @@ puts "Would you like to select another planet? (Y/N)"
 answer = gets.chomp
 if answer == "no"
   break
+else 
+  Planet.all.each_with_index do |planet, i|
+  puts "#{i}: #{planet}"
+end
 end
 end

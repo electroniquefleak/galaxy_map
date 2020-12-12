@@ -30,10 +30,10 @@ class Planet
         str = "Rotation Period: #{rotation_period}" + "\n" + "Orbital Period: #{orbital_period}" + "\n" + "Diameter: #{diameter}" + "\n" + "Climate: #{climate}" + "\n" + "Gravity: #{gravity}" + "\n" + "Terrain: #{terrain}" + "\n" + "Surface Water: #{surface_water}" + "\n" + "Population: #{population}" + "\n" + "Films: #{films}"
         puts str
         str = ""
-        str += "Residents:"
         puts "Would you like to see the inhabitants of this planet?"
         answer = gets.chomp
-        if answer == "Yes" 
+        if answer == "Yes"
+        str = "Residents:"
         Resident.all.each do |resident|
             str += resident.info + "\n"
         end
