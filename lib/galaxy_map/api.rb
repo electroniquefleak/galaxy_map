@@ -16,4 +16,9 @@ class API
         body
     end
 
+    def self.get_resident(id)
+        uri=("#{id}")
+        body=HTTParty.get(uri)
+        body
+    end
 end
