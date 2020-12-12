@@ -25,7 +25,7 @@ end
 end
 puts "Welcome to the galaxy map. There is more knowledge here than anywhere else in the galaxy!"
 Planet.all.each_with_index do |planet, i|
-  puts "#{i}, #{planet}"
+  puts "#{i}: #{planet}"
 end
 print "Total Planets:" + " "
 puts Planet.all.count

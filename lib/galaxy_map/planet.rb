@@ -26,5 +26,6 @@ class Planet
     end
 
     def info
+        "#{rotation_period}" + "\n" + "#{orbital_period}" + "\n" + "#{diameter}" + "\n" + "#{climate}" + "\n" + "#{gravity}" + "\n" + "#{terrain}" + "\n" + "#{surface_water}" + "\n" + "#{population}" + "\n" + "#{residents}" + "\n" + "#{films}"
     end
 end
