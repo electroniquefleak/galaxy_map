@@ -23,14 +23,14 @@ planets.each do |planet|
 Planet.new(api.get_planet(planet))
 end
 end
-puts "Welcome to the galaxy map. There is more knowledge here than anywhere else in the galaxy!"
+puts "Welcome to the Jedi Archives, student. There is more knowledge here than anywhere else in the galaxy!"
 Planet.all.each_with_index do |planet, i|
   puts "#{i}: #{planet}"
 end
 print "Total Planets:" + " "
 puts Planet.all.count
 while true
-puts "Please select a planet to view its diagnostics."
+puts "Galaxy Map Interface: Intialized. . . Welcome, please select a planet to view its astrographical information."
 choice = gets.chomp.to_i
 puts Planet.all[choice]
 end
