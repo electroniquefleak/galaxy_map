@@ -32,8 +32,8 @@ class Planet
         str = ""
         puts "Would you like to see the inhabitants of this planet?"
         answer = gets.chomp
-        if answer == "Yes"
-        str = "Residents:"
+        if answer.downcase == "yes"
+        str = "Residents:" + "\n"
         Resident.all.each do |resident|
             str += resident.info + "\n"
         end

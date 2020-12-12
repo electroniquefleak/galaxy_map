@@ -35,7 +35,7 @@ choice = gets.chomp.to_i
 puts Planet.all[choice].info
 puts "Would you like to select another planet? (Y/N)"
 answer = gets.chomp
-if answer == "no"
+if answer.downcase == "no"
   break
 else 
   Planet.all.each_with_index do |planet, i|
