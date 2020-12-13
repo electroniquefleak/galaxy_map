@@ -10,8 +10,3 @@ require_relative "./galaxy_map/cli"
 require_relative "./galaxy_map/planet"
 require_relative "./galaxy_map/resident"
 
-module GalaxyMap
-  class Error < StandardError; end
-  # Your code goes here...
-end
-
