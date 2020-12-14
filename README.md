@@ -1,6 +1,12 @@
 # GalaxyMap
 
+Hello, and welcome to the Galaxy Map CLI application. This application is an in-universe data grabber set in the Star Wars franchise!
 
+Using HTTParty to retrieve data from [SWAPI](https://swapi.dev/), the Star Wars API, Galaxy Map allows user interaction within the command-line terminal by using creating new instances of Ruby classes. These classes represent various data from the first six Star Wars films and made visible to the user to be accessed.
+
+As this is an in-universe application, the user interface is designed to appear to the user as if they're accessing the Jedi Archives on Coruscant themselves! Discover 20 of the planets featured in the films as well as the many characters that appear in the films!
+
+Enjoy!
 
 ## Installation
 
@@ -20,7 +26,7 @@ Or install it yourself as:
 
 ## Usage
 
-
+To access the Galaxy Map, run the start file located in the bin folder (./bin/start). Make sure that you're in the correct file location for it to properly run! Once the interface is loaded, the user will be greeted with a message and then an array of planets will be listed to choose from, with ~20 planets to select. The user can select which planet in the terminal by typing the number of the specific planet they wish to learn about. Once a planet is selected, a prompt will appear inquiring whether the user wishes to learn about the inhabitants of each planet. The application will run on simple yes/no responses, and will break if the user chooses no. By choosing yes, the information will be displayed in the terminal.
 
 ## Development
 
