@@ -1,6 +1,5 @@
 class Resident
 	@@all = []
-	attr_accessor :name, :height, :mass, :hair_color, :skin_color, :eye_color, :birth_year, :gender, :homeworld, :films, :species, :vehicles, :starships, :created, :edited, :url
 
 	def save
 		self.class.all << self
@@ -13,14 +12,11 @@ class Resident
 	def initialize(attributes=nil)
 		if attributes
 			attributes.each do |k,v|
+				self.class.attr_accessor k
 				self.send("#{k}=", v)
 			end
 		end
 		save
-	end
-
-	def to_s
-		"#{@name}"
 	end
 
 	def info 

@@ -6,15 +6,10 @@ class CLI
 
 	def welcome
 		api=API.new
-		(1..6).each do |i|
-			planets=api.get_planets(i)
-			planets.each do |planet|
-				Planet.new(api.get_planet(planet))
-			end
-		end
+			api.get_planets
 				puts "Welcome to the Jedi Archives, student. There is more knowledge here than anywhere else in the galaxy!"
 		Planet.all.each_with_index do |planet, i|
-			puts "#{i}: #{planet}"
+			puts "#{i}: #{planet}" #need to make the array appear starting with 1.
 		end
 
 		print "Total Planets:" + " "
@@ -36,3 +31,55 @@ class CLI
 		end
     end
 end
+
+
+# ░██████╗░░█████╗░██╗░░░░░░█████╗░██╗░░██╗██╗░░░██╗  ███╗░░░███╗░█████╗░██████╗░
+# ██╔════╝░██╔══██╗██║░░░░░██╔══██╗╚██╗██╔╝╚██╗░██╔╝  ████╗░████║██╔══██╗██╔══██╗
+# ██║░░██╗░███████║██║░░░░░███████║░╚███╔╝░░╚████╔╝░  ██╔████╔██║███████║██████╔╝
+# ██║░░╚██╗██╔══██║██║░░░░░██╔══██║░██╔██╗░░░╚██╔╝░░  ██║╚██╔╝██║██╔══██║██╔═══╝░
+# ╚██████╔╝██║░░██║███████╗██║░░██║██╔╝╚██╗░░░██║░░░  ██║░╚═╝░██║██║░░██║██║░░░░░
+# ░╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░░░░
+
+# Welcome to the Jedi Archives, student. There is more knowledge here than anywhere else in the galaxy!
+
+# Main Menu
+# Please select one of the following options:
+# 1. Log into the Jedi Archives' galaxy map
+
+# █▀█ █░░ ▄▀█ █▄░█ █▀▀ ▀█▀   █▀ █▀▀ █░░ █▀▀ █▀▀ ▀█▀ █ █▀█ █▄░█
+# █▀▀ █▄▄ █▀█ █░▀█ ██▄ ░█░   ▄█ ██▄ █▄▄ ██▄ █▄▄ ░█░ █ █▄█ █░▀█
+
+#Galaxy Map Interface: Intialized . .. ... Welcome, please select a planet to view its astrographical information. (0-20)
+#0-19
+#>Planet's information
+
+#Galaxy Map Menu
+#Please select one of the following options:
+#1. See inhabitants of selected planet
+#2. Select another planet
+#3. Exit
+
+
+#3: 
+#           ___
+#          /---\
+#         | @ @:|		May the Force be
+#         |  " :|		with you, student!
+#          \_-_/
+#        _.d._.b.__
+#    +"i\  |\_/|  /i"+
+#    [_| \ |   | / |_]
+#   .' |  ):===:(  | `.
+#   |:.'+-" | | "-+`.:|
+#   |_| |-. |_|   | |_|
+#   \:\ |-' /+\   ! |:|
+#    \ \|n._\+/_.n| / /
+#     \XT::::-::::T/ /
+#      "l-. `"' .-lXX
+#       |: \   / :|
+#       |:  i-i  :|
+#       |:  | |  :| LS
+#       |:  | |  :|
+#      \|;_ | |__;|/
+#       (__() ()__)
+#       |:  | |  :|

@@ -7,6 +7,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     coderay (1.1.3)
+    colorize (0.8.1)
     diff-lcs (1.4.4)
     httparty (0.18.1)
       mime-types (~> 3.0)
@@ -39,6 +40,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  colorize
   galaxy_map!
   httparty (~> 0.18.1)
   pry (~> 0.13.1)

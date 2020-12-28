@@ -1,6 +1,5 @@
 class Planet
 	@@all = []
-	attr_accessor :name, :rotation_period, :orbital_period, :diameter, :climate, :gravity, :terrain, :surface_water, :population, :residents, :films, :created, :edited, :url
 
 	def save
 		self.class.all << self if @@all.none? {|planet|planet.name==@name}
@@ -13,6 +12,7 @@ class Planet
 	def initialize(attributes=nil)
 		if attributes
 			attributes.each do |k,v|
+				self.class.attr_accessor k
 				self.send("#{k}=", v)
 			end
 		end
@@ -20,8 +20,8 @@ class Planet
 	end
 
 	def to_s
-		"#{@name}"
-	end
+		"#{name}"
+	 end
 
     def info
         res = []
