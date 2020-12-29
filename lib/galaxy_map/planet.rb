@@ -28,7 +28,7 @@ class Planet
 		residents.each do |resident|
 			res<<Resident.new(API.get_resident(resident))
 		end
-		str = "Rotation Period: #{rotation_period}" + "\n" + "Orbital Period: #{orbital_period}" + "\n" + "Diameter: #{diameter}" + "\n" + "Climate: #{climate}" + "\n" + "Gravity: #{gravity}" + "\n" + "Terrain: #{terrain}" + "\n" + "Surface Water: #{surface_water}" + "\n" + "Population: #{population}"
+		str = "Name: #{name}" + "\n" + "Rotation Period: #{rotation_period}" + "\n" + "Orbital Period: #{orbital_period}" + "\n" + "Diameter: #{diameter}" + "\n" + "Climate: #{climate}" + "\n" + "Gravity: #{gravity}" + "\n" + "Terrain: #{terrain}" + "\n" + "Surface Water: #{surface_water}" + "\n" + "Population: #{population}"
 		puts str
 		str = ""
 		str
@@ -36,6 +36,7 @@ class Planet
 	
 	def print_residents
 		str = ""
+		res = []
 		residents.each do |resident|
 			res<<Resident.new(API.get_resident(resident))
 		end

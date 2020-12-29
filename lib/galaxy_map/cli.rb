@@ -10,33 +10,37 @@ class CLI
 
 		api=API.new
 			api.get_planets
+
+
+		while true
 				puts "\n\n"
 				puts ' █▀█ █░░ ▄▀█ █▄░█ █▀▀ ▀█▀   █▀ █▀▀ █░░ █▀▀ █▀▀ ▀█▀ █ █▀█ █▄░█  '
 				puts " █▀▀ █▄▄ █▀█ █░▀█ ██▄ ░█░   ▄█ ██▄ █▄▄ ██▄ █▄▄ ░█░ █ █▄█ █░▀█\n\n"
 				Planet.all.each_with_index do |planet, i|
-			puts "#{i+1}: #{planet}"
-		end
-
-		print "Total Planets:" + " "
-		puts Planet.all.count
-		while true
-			puts "Galaxy Map Interface: Intialized. . . Welcome, please select a planet to view its astrographical information. (1-20)"
+					puts "#{i+1}: #{planet}"
+				end
+				print "Total Planets:" + " "
+				puts Planet.all.count
+				puts "Galaxy Map Interface: Initialized! Welcome, please select a planet to view its astrographical information. (1-20)"
 			choice = gets.chomp.to_i - 1
 			puts Planet.all[choice].info
 
 
 
 
-
-			answer = galaxy_menu
-			if answer == 4
-				goodbye
-				break
-			elsif answer == 1
-				planet.all [choice].print_residents
-			else 
-				Planet.all.each_with_index do |planet, i|
-					puts "#{i}: #{planet}"
+			while true
+				answer = galaxy_menu
+				if answer == 3
+					goodbye
+					return
+				elsif answer == 2
+					break
+				elsif answer == 1
+				puts Planet.all[choice].print_residents
+				else 
+					Planet.all.each_with_index do |planet, i|
+						puts "#{i}: #{planet}"
+					end
 				end
 			end
 		end
@@ -63,6 +67,7 @@ def main_menu
 	puts "2. Exit"
 	puts "\n\n"
 	answer = gets.chomp.to_i
+	puts "Initializing. . ."
 	answer
 end
 
