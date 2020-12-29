@@ -1,3 +1,5 @@
+require 'colorize'
+
 class Planet
 	@@all = []
 
@@ -40,9 +42,9 @@ class Planet
 		residents.each do |resident|
 			res<<Resident.new(API.get_resident(resident))
 		end
-		str = "Residents:" + "\n"
+		str = "\nResidents:\n".colorize(:yellow)
 		if res.count == 0
-			str += "There are no residents."
+			str += "There are no residents.\n\n"
 		end
 		res.each do |resident|
 			str += resident.info + "\n"

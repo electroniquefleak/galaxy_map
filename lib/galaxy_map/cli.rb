@@ -1,35 +1,62 @@
+require 'colorize'
+
 class CLI
 
 	def welcome_message
 		puts "\n\n"
-		puts '  ░██████╗░░█████╗░██╗░░░░░░█████╗░██╗░░██╗██╗░░░██╗  ███╗░░░███╗░█████╗░██████╗░  '
-		puts '  ██╔════╝░██╔══██╗██║░░░░░██╔══██╗╚██╗██╔╝╚██╗░██╔╝  ████╗░████║██╔══██╗██╔══██╗  '
-		puts '  ██║░░██╗░███████║██║░░░░░███████║░╚███╔╝░░╚████╔╝░  ██╔████╔██║███████║██████╔╝  '
-		puts '  ██║░░╚██╗██╔══██║██║░░░░░██╔══██║░██╔██╗░░░╚██╔╝░░  ██║╚██╔╝██║██╔══██║██╔═══╝░  '
-		puts '  ╚██████╔╝██║░░██║███████╗██║░░██║██╔╝╚██╗░░░██║░░░  ██║░╚═╝░██║██║░░██║██║░░░░░  '
-		puts "  ░╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░░░░ \n\n"
-	
-		puts "Welcome to the Jedi Archives, student. There is more knowledge here than anywhere else in the galaxy!"
+		puts '░██████╗░░█████╗░██╗░░░░░░█████╗░██╗░░██╗██╗░░░██╗  ███╗░░░███╗░█████╗░██████╗░'.colorize(:yellow)
+		puts '██╔════╝░██╔══██╗██║░░░░░██╔══██╗╚██╗██╔╝╚██╗░██╔╝  ████╗░████║██╔══██╗██╔══██╗'.colorize(:yellow)
+		puts '██║░░██╗░███████║██║░░░░░███████║░╚███╔╝░░╚████╔╝░  ██╔████╔██║███████║██████╔╝'.colorize(:yellow)
+		puts '██║░░╚██╗██╔══██║██║░░░░░██╔══██║░██╔██╗░░░╚██╔╝░░  ██║╚██╔╝██║██╔══██║██╔═══╝░'.colorize(:yellow)
+		puts '╚██████╔╝██║░░██║███████╗██║░░██║██╔╝╚██╗░░░██║░░░  ██║░╚═╝░██║██║░░██║██║░░░░░'.colorize(:yellow)
+		puts "░╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░░░░ \n\n".colorize(:yellow)
+		puts '           ___   '.colorize(:cyan)
+		puts '          /---\  '.colorize(:cyan)
+		puts '         | @ @:|	'.colorize(:cyan) + 'Welcome to the Jedi Archives, student.'.colorize(:yellow)
+		puts '         |  " :|	'.colorize(:cyan) +	'There is more knowledge here than anywhere else in the galaxy!'.colorize(:yellow)
+		puts '          \_-_/  '.colorize(:cyan)
+		puts '        _.d._.b.__  '.colorize(:cyan)
+		puts '    +"i\  |\_/|  /i"+  '.colorize(:cyan)
+		puts '    [_| \ |   | / |_]  '.colorize(:cyan)
+		puts "   .' |  ):===:(  | `.  ".colorize(:cyan)
+		puts "   |:.'+-  | |  -+`.:|  ".colorize(:cyan)
+		puts '   |_| |-. |_|   | |_|  '.colorize(:cyan)
+		puts "   \:\ |-' /+\   ! |:|  ".colorize(:cyan)
+		puts '    \ \|n._\+/_.n| / /  '.colorize(:cyan)
+		puts '     \XT::::-::::T/ /  '.colorize(:cyan)
+		puts '      "l-. `". .-lXX  '.colorize(:cyan)
+		puts '       |: \   / :|  '.colorize(:cyan)
+		puts '       |:  i-i  :|  '.colorize(:cyan)
+		puts '       |:  | |  :| LS  '.colorize(:cyan)
+		puts '       |:  | |  :|  '.colorize(:cyan)
+		puts '      \|;_ | |__;|/  '.colorize(:cyan)
+		puts '       (__() ()__)  '.colorize(:cyan)
+		puts "       |:  | |  :|  \n\n".colorize(:cyan)
 	end
 	
 	def main_menu
 		puts "\n\n"
-		puts "Main Menu"
+		puts '█▀▄▀█ ▄▀█ █ █▄░█   █▀▄▀█ █▀▀ █▄░█ █░█'.colorize(:yellow)
+		puts '█░▀░█ █▀█ █ █░▀█   █░▀░█ ██▄ █░▀█ █▄█'.colorize(:yellow)
+		puts "*************************************\n\n"
 		puts "Please select one of the following options:"
 		puts "1. Log into the Jedi Archives' galaxy map"
 		puts "2. Exit"
 		puts "\n\n"
 		answer = gets.chomp.to_i
-		puts "Initializing. . ."
+		puts "\n\n"
+		puts "Initializing...".colorize(:yellow)
 		answer
 	end
 	
 	def galaxy_menu
-		puts "Galaxy Map Menu"
+		puts '█▀▀ ▄▀█ █░░ ▄▀█ ▀▄▀ █▄█   █▀▄▀█ ▄▀█ █▀█   █▀▄▀█ █▀▀ █▄░█ █░█'.colorize(:yellow)
+		puts '█▄█ █▀█ █▄▄ █▀█ █░█ ░█░   █░▀░█ █▀█ █▀▀   █░▀░█ ██▄ █░▀█ █▄█'.colorize(:yellow)
+		puts "************************************************************\n\n"
 		puts "Please select one of the following options:"
-		puts "1. See inhabitants of selected planet (show Resident info method)"
-		puts "2. Select another planet (loop back to lines 49-54)"
-		puts "3. Exit"
+		puts "1. See inhabitants of selected planet"
+		puts "2. Select another planet"
+		puts "3. Exit\n\n"
 		answer = gets.chomp.to_i
 		answer
 	end
@@ -37,28 +64,28 @@ class CLI
 	
 	def goodbye
 		puts "\n\n"
-		puts '           ___   '
-		puts '          /---\  '
-		puts '         | @ @:|		May the Force be  '
-		puts '         |  " :|		with you, student!  '
-		puts '          \_-_/  '
-		puts '        _.d._.b.__  '
-		puts '    +"i\  |\_/|  /i"+  '
-		puts '    [_| \ |   | / |_]  '
-		puts "   .' |  ):===:(  | `.  "
-		puts "   |:.'+-  | |  -+`.:|  "
-		puts '   |_| |-. |_|   | |_|  '
-		puts "   \:\ |-' /+\   ! |:|  "
-		puts '    \ \|n._\+/_.n| / /  '
-		puts '     \XT::::-::::T/ /  '
-		puts '      "l-. `". .-lXX  '
-		puts '       |: \   / :|  '
-		puts '       |:  i-i  :|  '
-		puts '       |:  | |  :| LS  '
-		puts '       |:  | |  :|  '
-		puts '      \|;_ | |__;|/  '
-		puts '       (__() ()__)  '
-		puts "       |:  | |  :|  \n\n"
+		puts '           ___   '.colorize(:cyan)
+		puts '          /---\  '.colorize(:cyan)
+		puts '         | @ @:|	'.colorize(:cyan) + 'May the Force be'.colorize(:yellow)
+		puts '         |  " :|	'.colorize(:cyan) +	'with you, student!'.colorize(:yellow)
+		puts '          \_-_/  '.colorize(:cyan)
+		puts '        _.d._.b.__  '.colorize(:cyan)
+		puts '    +"i\  |\_/|  /i"+  '.colorize(:cyan)
+		puts '    [_| \ |   | / |_]  '.colorize(:cyan)
+		puts "   .' |  ):===:(  | `.  ".colorize(:cyan)
+		puts "   |:.'+-  | |  -+`.:|  ".colorize(:cyan)
+		puts '   |_| |-. |_|   | |_|  '.colorize(:cyan)
+		puts "   \:\ |-' /+\   ! |:|  ".colorize(:cyan)
+		puts '    \ \|n._\+/_.n| / /  '.colorize(:cyan)
+		puts '     \XT::::-::::T/ /  '.colorize(:cyan)
+		puts '      "l-. `". .-lXX  '.colorize(:cyan)
+		puts '       |: \   / :|  '.colorize(:cyan)
+		puts '       |:  i-i  :|  '.colorize(:cyan)
+		puts '       |:  | |  :| LS  '.colorize(:cyan)
+		puts '       |:  | |  :|  '.colorize(:cyan)
+		puts '      \|;_ | |__;|/  '.colorize(:cyan)
+		puts '       (__() ()__)  '.colorize(:cyan)
+		puts "       |:  | |  :|  \n\n".colorize(:cyan)
 	end
 	
 	def welcome
@@ -75,16 +102,19 @@ class CLI
 
 		while true
 				puts "\n\n"
-				puts ' █▀█ █░░ ▄▀█ █▄░█ █▀▀ ▀█▀   █▀ █▀▀ █░░ █▀▀ █▀▀ ▀█▀ █ █▀█ █▄░█  '
-				puts " █▀▀ █▄▄ █▀█ █░▀█ ██▄ ░█░   ▄█ ██▄ █▄▄ ██▄ █▄▄ ░█░ █ █▄█ █░▀█\n\n"
+				puts '█▀█ █░░ ▄▀█ █▄░█ █▀▀ ▀█▀   █▀ █▀▀ █░░ █▀▀ █▀▀ ▀█▀ █ █▀█ █▄░█'.colorize(:yellow)
+				puts '█▀▀ █▄▄ █▀█ █░▀█ ██▄ ░█░   ▄█ ██▄ █▄▄ ██▄ █▄▄ ░█░ █ █▄█ █░▀█'.colorize(:yellow)
+				puts "************************************************************\n\n"
 				Planet.all.each_with_index do |planet, i|
 					puts "#{i+1}: #{planet}"
 				end
-				print "Total Planets:" + " "
+				print "Total Planets:" + " ".colorize(:yellow)
 				puts Planet.all.count
-				puts "Galaxy Map Interface: Initialized! Welcome, please select a planet to view its astrographical information. (1-20)"
+				puts "\n\nGalaxy Map Interface: Initialized! Welcome, please select a planet to view its astrographical information. (1-20)\n\n".colorize(:yellow)
 			choice = gets.chomp.to_i - 1
+			puts "\n"
 			puts Planet.all[choice].info
+			puts "\n"
 
 
 
