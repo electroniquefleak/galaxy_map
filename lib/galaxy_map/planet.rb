@@ -41,6 +41,8 @@ class Planet
 			res<<Resident.new(API.get_resident(resident))
 		end
 		str = "Residents:" + "\n"
+		if res.count == 0
+			str += "There are no residents."
 		res.each do |resident|
 			str += resident.info + "\n"
 		end
