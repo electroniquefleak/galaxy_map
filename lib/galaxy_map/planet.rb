@@ -43,6 +43,7 @@ class Planet
 		str = "Residents:" + "\n"
 		if res.count == 0
 			str += "There are no residents."
+		end
 		res.each do |resident|
 			str += resident.info + "\n"
 		end
