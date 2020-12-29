@@ -31,14 +31,18 @@ class Planet
 		str = "Rotation Period: #{rotation_period}" + "\n" + "Orbital Period: #{orbital_period}" + "\n" + "Diameter: #{diameter}" + "\n" + "Climate: #{climate}" + "\n" + "Gravity: #{gravity}" + "\n" + "Terrain: #{terrain}" + "\n" + "Surface Water: #{surface_water}" + "\n" + "Population: #{population}"
 		puts str
 		str = ""
-		puts "Would you like to see the inhabitants of this planet?"
-		answer = gets.chomp
-		if answer.downcase == "yes"
-			str = "Residents:" + "\n"
-			res.each do |resident|
-				str += resident.info + "\n"
-			end
+		str
+	end
+	
+	def print_residents
+		str = ""
+		residents.each do |resident|
+			res<<Resident.new(API.get_resident(resident))
+		end
+		str = "Residents:" + "\n"
+		res.each do |resident|
+			str += resident.info + "\n"
 		end
 		str
-    end
+	end
 end

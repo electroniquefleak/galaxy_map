@@ -21,13 +21,19 @@ class CLI
 		puts Planet.all.count
 		while true
 			puts "Galaxy Map Interface: Intialized. . . Welcome, please select a planet to view its astrographical information. (1-20)"
-			choice = gets.chomp.to_i
+			choice = gets.chomp.to_i - 1
 			puts Planet.all[choice].info
-			puts "Would you like to select another planet? (YES/NO)"
-			answer = gets.chomp
-			if answer.downcase == "no"
-				puts "May the Force be with you, student!"
+
+
+
+
+
+			answer = galaxy_menu
+			if answer == 4
+				goodbye
 				break
+			elsif answer == 1
+				planet.all [choice].print_residents
 			else 
 				Planet.all.each_with_index do |planet, i|
 					puts "#{i}: #{planet}"
@@ -50,23 +56,25 @@ def welcome_message
 end
 
 def main_menu
+	puts "\n\n"
 	puts "Main Menu"
 	puts "Please select one of the following options:"
 	puts "1. Log into the Jedi Archives' galaxy map"
 	puts "2. Exit"
+	puts "\n\n"
 	answer = gets.chomp.to_i
 	answer
 end
 
-#Galaxy Map Interface: Intialized . .. ... Welcome, please select a planet to view its astrographical information. (0-20)
-#0-19
-#>Planet's information
-
-#Galaxy Map Menu
-#Please select one of the following options:
-#1. See inhabitants of selected planet (show Resident info method)
-#2. Select another planet (loop back to lines 49-54)
-#3. Exit
+def galaxy_menu
+	puts "Galaxy Map Menu"
+	puts "Please select one of the following options:"
+	puts "1. See inhabitants of selected planet (show Resident info method)"
+	puts "2. Select another planet (loop back to lines 49-54)"
+	puts "3. Exit"
+	answer = gets.chomp.to_i
+	answer
+end
 
 
 def goodbye
