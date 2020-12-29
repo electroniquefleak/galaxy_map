@@ -11,13 +11,13 @@ class API
 		end
 	end
 
-	def get_planet(id) #fix the id argument
+	def get_planet(id)
 		uri=("#{id}")
 		body=HTTParty.get(uri)
 		body
 	end
 
-	def self.get_resident(id) #fix the id argument
+	def self.get_resident(id)
 		uri=("#{id}")
 		body=HTTParty.get(uri)
 		body
