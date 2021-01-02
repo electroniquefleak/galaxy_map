@@ -66,7 +66,7 @@ DEPENDENCIES
   pry (~> 0.13.1)
   rake (~> 12.0)
   rspec (~> 3.0)
-  rubocop
+  rubocop (~> 1.7.0)
   swapi (~> 0.0.2)
 
 BUNDLED WITH

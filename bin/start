@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative "../lib/galaxy_map.rb"
+require_relative '../lib/galaxy_map'
 
 CLI.new.welcome
