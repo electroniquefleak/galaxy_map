@@ -42,7 +42,7 @@ class CLI
     puts "\n\n"
     answer = gets.chomp.to_i
     puts "\n\n"
-    puts 'Initializing...'.colorize(:yellow)
+    puts "Initializing...\n\n".colorize(:yellow)
     answer
   end
 
@@ -93,15 +93,15 @@ class CLI
 
     API.new.get_planets
 
-    while true
+    loop do
       puts "\n\n"
       puts '█▀█ █░░ ▄▀█ █▄░█ █▀▀ ▀█▀   █▀ █▀▀ █░░ █▀▀ █▀▀ ▀█▀ █ █▀█ █▄░█'.colorize(:yellow)
       puts '█▀▀ █▄▄ █▀█ █░▀█ ██▄ ░█░   ▄█ ██▄ █▄▄ ██▄ █▄▄ ░█░ █ █▄█ █░▀█'.colorize(:yellow)
       puts "************************************************************\n\n"
       Planet.all.each_with_index do |planet, i|
-        puts "#{i + 1}: #{planet}"
+        puts "#{i + 1}: #{planet.name}"
       end
-      print 'Total Planets:' + ' '.colorize(:yellow)
+      print "#{'Total Planets:'.colorize(:yellow)} "
       puts Planet.all.count
       puts "\n\nGalaxy Map Interface: Initialized! Welcome, please select a planet to view its astrographical information. (1-20)\n\n".colorize(:yellow)
       choice = gets.chomp.to_i - 1
@@ -109,13 +109,14 @@ class CLI
       puts Planet.all[choice].info
       puts "\n\n"
 
-      while true
+      loop do
         answer = galaxy_menu
-        if answer == 1
-          puts Planet.all[choice].print_residents
-        elsif answer == 2
+        case answer
+        when 1
+          Planet.all[choice].print_residents
+        when 2
           break
-        elsif answer == 3
+        when 3
           goodbye
           return
         else

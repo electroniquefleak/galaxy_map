@@ -1,5 +1,5 @@
 class API
-  URL = 'https://swapi.dev/api/'.freeze
+  URL = 'https://swapi.dev/api/'
 
   def get_planets
     (1..6).each do |i|

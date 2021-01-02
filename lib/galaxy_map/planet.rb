@@ -10,11 +10,9 @@ class Planet
   end
 
   def initialize(attributes = nil)
-    if attributes
-      attributes.each do |k, v|
-        self.class.attr_accessor k
-        send("#{k}=", v)
-      end
+    attributes&.each do |k, v|
+      self.class.attr_accessor k
+      send("#{k}=", v)
     end
     save
   end
@@ -42,10 +40,10 @@ class Planet
       res << Resident.new(API.get_resident(resident))
     end
     str = "\nResidents:\n".colorize(:yellow)
-    str += "There are no residents.\n\n" if res.count == 0
+    str += "There are no inhabitants on this planet.\n\n" if res.count.zero?
+    puts str
     res.each do |resident|
-      str += resident.info + "\n"
+      puts resident.info
     end
-    str
   end
 end

@@ -10,11 +10,9 @@ class Resident
   end
 
   def initialize(attributes = nil)
-    if attributes
-      attributes.each do |k, v|
-        self.class.attr_accessor k
-        send("#{k}=", v)
-      end
+    attributes&.each do |k, v|
+      self.class.attr_accessor k
+      send("#{k}=", v)
     end
     save
   end
