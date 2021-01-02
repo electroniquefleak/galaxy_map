@@ -1,5 +1,3 @@
-require 'colorize'
-
 class Resident
 	@@all = []
 
@@ -22,6 +20,13 @@ class Resident
 	end
 
 	def info 
-		"Name: #{name}" + "\n" + "Height: #{height}" + "\n" + "Mass: #{mass}" + "\n" + "Hair Color: #{hair_color}" + "\n" + "Skin Color: #{skin_color}" + "\n" + "Eye Color: #{eye_color}" + "\n" + "Birth Year: #{birth_year}" + "\n" + "Gender: #{gender}" + "\n"
+		puts "Name: #{name}"
+		puts "Height: #{height}"
+		puts "Mass: #{mass}"
+		puts "Hair Color: #{hair_color}"
+		puts "Skin Color: #{skin_color}"
+		puts "Eye Color: #{eye_color}"
+		puts "Birth Year: #{birth_year}"
+		puts "Gender: #{gender}"
 	end
 end

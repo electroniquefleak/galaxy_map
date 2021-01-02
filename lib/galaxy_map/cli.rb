@@ -1,5 +1,3 @@
-require 'colorize'
-
 class CLI
 
 	def welcome_message
@@ -96,9 +94,7 @@ class CLI
 				return
 			end
 
-		api=API.new
-			api.get_planets
-
+		API.new.get_planets
 
 		while true
 				puts "\n\n"
@@ -114,23 +110,20 @@ class CLI
 			choice = gets.chomp.to_i - 1
 			puts "\n"
 			puts Planet.all[choice].info
-			puts "\n"
-
-
-
+			puts "\n\n"
 
 			while true
 				answer = galaxy_menu
-				if answer == 3
-					goodbye
-					return
+				if answer == 1
+				puts Planet.all[choice].print_residents
 				elsif answer == 2
 					break
-				elsif answer == 1
-				puts Planet.all[choice].print_residents
+				elsif answer == 3
+					goodbye
+					return
 				else 
 					Planet.all.each_with_index do |planet, i|
-						puts "#{i}: #{planet}"
+						puts "#{i}: #{planet.name}"
 					end
 				end
 			end

@@ -1,5 +1,3 @@
-require 'colorize'
-
 class Planet
 	@@all = []
 
@@ -21,19 +19,20 @@ class Planet
 		save
 	end
 
-	def to_s
-		"#{name}"
-	 end
-
     def info
         res = []
 		residents.each do |resident|
 			res<<Resident.new(API.get_resident(resident))
 		end
-		str = "Name: #{name}" + "\n" + "Rotation Period: #{rotation_period}" + "\n" + "Orbital Period: #{orbital_period}" + "\n" + "Diameter: #{diameter}" + "\n" + "Climate: #{climate}" + "\n" + "Gravity: #{gravity}" + "\n" + "Terrain: #{terrain}" + "\n" + "Surface Water: #{surface_water}" + "\n" + "Population: #{population}"
-		puts str
-		str = ""
-		str
+		puts "Name: #{name}"
+		puts "Rotation Period: #{rotation_period}"
+		puts "Orbital Period: #{orbital_period}"
+		puts "Diameter: #{diameter}"
+		puts "Climate: #{climate}"
+		puts "Gravity: #{gravity}"
+		puts "Terrain: #{terrain}"
+		puts "Surface Water: #{surface_water}"
+		puts "Population: #{population}"
 	end
 	
 	def print_residents

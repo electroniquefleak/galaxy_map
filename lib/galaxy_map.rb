@@ -3,6 +3,7 @@ require "net/http"
 require "pry"
 require "swapi"
 require "json"
+require "colorize"
 
 require_relative "./galaxy_map/version"
 require_relative "./galaxy_map/api"
