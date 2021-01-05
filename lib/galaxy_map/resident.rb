@@ -17,7 +17,7 @@ class Resident
     save
   end
 
-  def info
+  def resident_info
     puts "Name: #{name}"
     puts "Height: #{height}"
     puts "Mass: #{mass}"

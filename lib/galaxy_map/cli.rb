@@ -104,16 +104,16 @@ class CLI
       print "#{'Total Planets:'.colorize(:yellow)} "
       puts Planet.all.count
       puts "\n\nGalaxy Map Interface: Initialized! Welcome, please select a planet to view its astrographical information. (1-20)\n\n".colorize(:yellow)
-      choice = gets.chomp.to_i - 1
+      planet_choice = gets.chomp.to_i - 1
       puts "\n"
-      puts Planet.all[choice].info
+      puts Planet.all[planet_choice].planet_info
       puts "\n\n"
 
       loop do
         answer = galaxy_menu
         case answer
         when 1
-          Planet.all[choice].print_residents
+          Planet.all[planet_choice].no_residents
         when 2
           break
         when 3

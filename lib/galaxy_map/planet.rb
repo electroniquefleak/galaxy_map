@@ -17,11 +17,7 @@ class Planet
     save
   end
 
-  def info
-    res = []
-    residents.each do |resident|
-      res << Resident.new(API.get_resident(resident))
-    end
+  def planet_info
     puts "Name: #{name}"
     puts "Rotation Period: #{rotation_period}"
     puts "Orbital Period: #{orbital_period}"
@@ -33,8 +29,7 @@ class Planet
     puts "Population: #{population}"
   end
 
-  def print_residents
-    str = ''
+  def no_residents
     res = []
     residents.each do |resident|
       res << Resident.new(API.get_resident(resident))
@@ -43,7 +38,7 @@ class Planet
     str += "There are no inhabitants on this planet.\n\n" if res.count.zero?
     puts str
     res.each do |resident|
-      puts resident.info
+      puts resident.resident_info
     end
   end
 end
