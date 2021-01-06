@@ -99,11 +99,11 @@ class CLI
       puts '█▀▀ █▄▄ █▀█ █░▀█ ██▄ ░█░   ▄█ ██▄ █▄▄ ██▄ █▄▄ ░█░ █ █▄█ █░▀█'.colorize(:yellow)
       puts "************************************************************\n\n"
       Planet.all.each_with_index do |planet, i|
-        puts "#{i + 1}: #{planet.name}"
+        puts "#{i + 1}: ".colorize(:yellow) + "#{planet.name}"
       end
       print "#{'Total Planets:'.colorize(:yellow)} "
       puts Planet.all.count
-      puts "\n\nGalaxy Map Interface: Initialized! Welcome, please select a planet to view its astrographical information. (1-20)\n\n".colorize(:yellow)
+      puts "\n\nGalaxy Map Interface: Initialized! Welcome, please select a planet to view its astrographical information.".colorize(:yellow) + "(1-20)\n\n"
       planet_choice = gets.chomp.to_i - 1
       puts "\n"
       puts Planet.all[planet_choice].planet_info

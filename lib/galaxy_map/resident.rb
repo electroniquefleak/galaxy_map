@@ -18,13 +18,13 @@ class Resident
   end
 
   def resident_info
-    puts "Name: #{name}"
-    puts "Height: #{height}"
-    puts "Mass: #{mass}"
-    puts "Hair Color: #{hair_color}"
-    puts "Skin Color: #{skin_color}"
-    puts "Eye Color: #{eye_color}"
-    puts "Birth Year: #{birth_year}"
-    puts "Gender: #{gender}"
+    puts 'Name: '.colorize(:yellow) + "#{name}"
+    puts 'Height: '.colorize(:yellow) + "#{height}"
+    puts 'Mass: '.colorize(:yellow) + "#{mass}"
+    puts 'Hair Color: '.colorize(:yellow) + "#{hair_color}"
+    puts 'Skin Color: '.colorize(:yellow)  +  "#{skin_color}"
+    puts 'Eye Color: '.colorize(:yellow) + "#{eye_color}"
+    puts 'Birth Year: '.colorize(:yellow) + "#{birth_year}"
+    puts 'Gender: '.colorize(:yellow) + "#{gender}"
   end
 end

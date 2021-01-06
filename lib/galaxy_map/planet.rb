@@ -18,15 +18,15 @@ class Planet
   end
 
   def planet_info
-    puts "Name: #{name}"
-    puts "Rotation Period: #{rotation_period}"
-    puts "Orbital Period: #{orbital_period}"
-    puts "Diameter: #{diameter}"
-    puts "Climate: #{climate}"
-    puts "Gravity: #{gravity}"
-    puts "Terrain: #{terrain}"
-    puts "Surface Water: #{surface_water}"
-    puts "Population: #{population}"
+    puts 'Name: '.colorize(:yellow) + "#{name}"
+    puts 'Rotation Period: '.colorize(:yellow) + "#{rotation_period}"
+    puts 'Orbital Period: '.colorize(:yellow) + "#{orbital_period}"
+    puts 'Diameter: '.colorize(:yellow) + "#{diameter}"
+    puts 'Climate: '.colorize(:yellow) + "#{climate}"
+    puts 'Gravity: '.colorize(:yellow) + "#{gravity}"
+    puts 'Terrain: '.colorize(:yellow) + "#{terrain}"
+    puts 'Surface Water: '.colorize(:yellow) + "#{surface_water}"
+    puts 'Population: '.colorize(:yellow) + "#{population}"
   end
 
   def no_residents
