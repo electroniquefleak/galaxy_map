@@ -2,14 +2,14 @@ class Resident
   @@all = []
 
   def save
-    self.class.all << self
+    self.class.all << self if @@all.none? { |resident| resident.name == @name }
   end
 
   def self.all
     @@all
   end
 
-  def initialize(attributes = nil)
+  def initialize(attributes)
     attributes&.each do |k, v|
       self.class.attr_accessor k
       send("#{k}=", v)
