@@ -105,6 +105,11 @@ class CLI
       puts Planet.all.count
       puts "\n\nGalaxy Map Interface: Initialized! Welcome, please select a planet to view its astrographical information.".colorize(:yellow) + "(1-20)\n\n"
       planet_choice = gets.chomp.to_i - 1
+      while !planet_choice.between?(0, 19) do
+          puts "That is an invalid choice, please select from 1-20."
+          planet_choice = gets.chomp.to_i - 1
+        end
+          
       puts "\n"
       puts Planet.all[planet_choice].planet_info
       puts "\n\n"

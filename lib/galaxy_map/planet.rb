@@ -9,7 +9,7 @@ class Planet
     @@all
   end
 
-  def initialize(attributes = nil)
+  def initialize(attributes)
     attributes.each do |k, v|
       self.class.attr_accessor k
       send("#{k}=", v)
